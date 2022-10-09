@@ -6,3 +6,4 @@
 *.suo
 /.vs
 /obj
+/bin/Debug/net6.0
