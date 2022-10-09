@@ -11,6 +11,5 @@ class Program
         var tick = new TicketautomatGRAFG();
         Console.WriteLine(tick);
         Console.WriteLine("Hallo!");
-        Thread.Sleep(1000);
     }
 }
