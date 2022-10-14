@@ -7,8 +7,13 @@ class Program
 {
     static void Main(string[] args)
     {
-        //Ticketautomat tick = new Ticketautomat("Westbahnhof", 3);
-        var tick = new TicketautomatGRAFG("Westbahnhof", 3);
-        Console.WriteLine(tick);
+        Ticketautomat[] automaten = {
+            new TicketautomatGRAFG("Westbahnhof", 3),
+
+        };
+        foreach (var tick in automaten)
+        {
+            Console.WriteLine(tick);
+        }
     }
 }
