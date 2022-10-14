@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace automat;    
-class TicketautomatDAS
+class TicketautomatDAS : Ticketautomat
 {
     private String Standort { get; set; }
     private int ticketpreis;
