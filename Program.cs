@@ -13,7 +13,14 @@ class Program
         };
         foreach (var tick in automaten)
         {
-            Console.WriteLine(tick);
+            testedenautmaten(tick);
         }
+
     }
+    static bool testedenautmaten(Ticketautomat tick)
+    {
+        tick.einwerfen(3);
+        return false;
+    }
+
 }
