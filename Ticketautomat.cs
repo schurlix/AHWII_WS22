@@ -7,5 +7,6 @@ using System.Threading.Tasks;
 namespace automat;    
 class Ticketautomat
     {
+    public void einwerfen(int a) { }
     }
 
