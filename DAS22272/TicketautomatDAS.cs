@@ -22,7 +22,7 @@ class TicketautomatDAS : Ticketautomat
     }
     public override string ToString()
     {
-        return $"Ich bin ein Ticketautomat DAS22272, stehe in {this.Standort}, jedes Ticket kostet bei mir {ticketpreis}Euro.";
+        return $"Ich bin ein Ticketautomat DAS22272, stehe in {this.Standort}, jedes Ticket kostet bei mir {ticketpreis}€.";
     }
 
     public void einwerfen(int betrag)
