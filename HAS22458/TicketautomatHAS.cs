@@ -23,7 +23,7 @@ class TicketautomatHAS : Ticketautomat
     {
         return $"Ich bin ein Ticketautomat HAS, stehe in {this.Standort}, jedes Ticket kostet bei mir {ticketpreis}€.";
     }
-
+    
     public void einwerfen(int betrag)
     { 
 
@@ -36,4 +36,6 @@ class TicketautomatHAS : Ticketautomat
     int wechselGeldAuszahlen()
     { return 0; }
 }
+
+//Test
 
