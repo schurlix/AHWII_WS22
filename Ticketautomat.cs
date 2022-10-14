@@ -7,10 +7,5 @@ using System.Threading.Tasks;
 namespace automat;    
 class Ticketautomat
     {
-        // public String 
-       // public override string ToString()
-       // {
-       //     return "Ich bin ein Ticketautomat am {"
-       // }
     }
 
