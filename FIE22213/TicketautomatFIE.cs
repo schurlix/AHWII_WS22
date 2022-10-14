@@ -9,7 +9,7 @@ class TicketautomatFIE : Ticketautomat
 {
     public String Standort { get; set; }
     public int ticketpreis { get; set; }
-    public int eingeworfen { get; }
+    public int eingeworfen { get; private set; }
 
     public int gesamtEinnahmen { get; }
     public TicketautomatFIE(String Standort, int ticketPreis)
@@ -26,7 +26,7 @@ class TicketautomatFIE : Ticketautomat
 
     public void einwerfen(int betrag)
     {
-
+        this.eingeworfen += betrag;
     }
    
     // Hello World
