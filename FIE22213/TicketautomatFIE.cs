@@ -21,7 +21,7 @@ class TicketautomatFIE : Ticketautomat
     }
     public override string ToString()
     {
-        return $"Ich bin ein Ticketautomat GRAFG, stehe in {this.Standort}, jedes Ticket kostet bei mir {ticketPreis}€.";
+        return $"Ich bin ein Ticketautomat FIE, stehe in {this.Standort}, jedes Ticket kostet bei mir {ticketPreis}€.";
     }
 
     public void einwerfen(int betrag)

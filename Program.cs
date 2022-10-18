@@ -23,6 +23,7 @@ class Program
     static bool testedenautmaten(Ticketautomat tick)
     {
         tick.einwerfen(3);
+        Console.WriteLine(tick);
         return false;
     }
 
