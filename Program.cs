@@ -1,4 +1,3 @@
-﻿
 ﻿using System;
 
 namespace automat;
@@ -7,21 +6,26 @@ class Program
 {
     static void Main(string[] args)
     {
-        Ticketautomat[] automaten = {
-            new TicketautomatGRAFG("Westbahnhof", 3),
-            new TicketautomatDAS("Matzleinsdorfer Platz", 5)
+        TicketautomatCHA automaten = new TicketautomatCHA("Geistigestadt",6);
+        Console.WriteLine(automaten.ToString());
+        automaten.einwerfen();
+        Console.ReadLine();
 
-        };
-        foreach (var tick in automaten)
-        {
-            testedenautmaten(tick);
-        }
+
+        //TicketautomatCHA[] automaten = {
+        //    new TicketautomatCHA("Geistigestadt", 6),
+        //};
+        //foreach (var tick in automaten)
+        //{
+        //    testedenautmaten(tick);
+        //}
 
     }
-    static bool testedenautmaten(Ticketautomat tick)
-    {
-        tick.einwerfen(3);
-        return false;
-    }
+    //static bool testedenautmaten(TicketautomatCHA tick)
+    //{
+    //    //tick.einwerfen(3);
+    //    //Console.WriteLine(tick);
+    //    //return false;
+    //}
 
 }

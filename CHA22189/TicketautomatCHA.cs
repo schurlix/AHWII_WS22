@@ -8,14 +8,16 @@ using System.Threading.Tasks;
 namespace automat;    
 class TicketautomatCHA : Ticketautomat
 {
-    public String Standort { get; set; }
+    public String standort { get; set; }
     public int ticketpreis { get; set; }
-    public int eingeworfen { get; }
+    public int eingeworfen { get; set; }
 
     public int gesamtEinnahmen { get; }
-    public TicketautomatCHA(String Standort, int ticketPreis)
+
+
+    public TicketautomatCHA(String standort, int ticketPreis)
     {
-        this.Standort = Standort;
+        this.standort = standort;
         this.ticketpreis = ticketPreis;
         this.eingeworfen = 0;
         this.gesamtEinnahmen = 0;
@@ -24,25 +26,40 @@ class TicketautomatCHA : Ticketautomat
     }
     public override string ToString()
     {
-        return $"Ich bin ein Ticketautomat GRAFG, stehe in {this.Standort}, jedes Ticket kostet bei mir {ticketpreis}€.";
+        return $"Ich bin ein Ticketautomat, stehe in {this.standort}, jedes Ticket kostet bei mir {ticketpreis}€. Bitte werfen sie { ticketpreis} ein, um ein Ticket für {standort} zu kaufen.";
     }
      
-    public void einwerfen(int betrag)
+    public void einwerfen()
     {
-        Console.WriteLine("Bitte werfen sie 3$ rein.");
-        betrag = Convert.ToInt32(Console.ReadLine());
-        Console.WriteLine($"Du hast {betrag} eingeworfen");
-        Console.ReadLine();
+        
+        Console.WriteLine($"Bitte werfen Sie für das Ticket {ticketpreis-eingeworfen} Euro ein." );
 
-
+        int betrag = Convert.ToInt32(Console.ReadLine());
+        eingeworfen = eingeworfen + betrag;
+        ticketDrucken();
         
     }
 
-    bool ticketDrucken()
+    void ticketDrucken()
     {
-        return false;
+        if (eingeworfen < ticketpreis)
+        {
+            Console.WriteLine($"Du hast {eingeworfen} eingeworfen. Leider ist das zu wenig. Bitte werfe noch folgenden Betrag ein:" + (ticketpreis - eingeworfen));
+            einwerfen();
+        }
+        else
+        {
+            Console.WriteLine("#######################################");
+            Console.WriteLine("");
+            Console.WriteLine("Fahrschein");
+            Console.WriteLine("         Standort: " + this.standort);
+            Console.WriteLine("         Preis: " + this.ticketpreis);
+            Console.WriteLine("");
+            Console.WriteLine("#######################################");
+        }
+       
     }
-    int wechselGeldAuszahlen()
-    { return 0; }
+    /*int wechselGeldAuszahlen()
+    { return 0; */
 }
 
