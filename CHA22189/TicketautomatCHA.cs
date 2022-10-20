@@ -59,7 +59,7 @@ class TicketautomatCHA : Ticketautomat
         }
        
     }
-    /*int wechselGeldAuszahlen()
-    { return 0; */
+    
+
 }
 
