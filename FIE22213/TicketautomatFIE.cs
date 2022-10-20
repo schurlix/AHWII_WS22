@@ -10,8 +10,8 @@ class TicketautomatFIE : Ticketautomat
     public String Standort { get; set; }
     public int ticketpreis { get; set; }
     public int eingeworfen { get; private set; }
-
     public int gesamtEinnahmen { get; }
+
     public TicketautomatFIE(String Standort, int ticketPreis)
     {
         this.Standort = Standort;
@@ -29,11 +29,33 @@ class TicketautomatFIE : Ticketautomat
         this.eingeworfen += betrag;
     }
    
-    // Hello World
+    
     bool ticketDrucken()
     {
-        return false;
+        if (eingeworfen >= ticketpreis)
+        { 
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
-    int wechselGeldAuszahlen()
-    { return 0; }
+    int wechselGeldAuszahlen(int wechselGeld)
+    { 
+        if(ticketDrucken = true)
+        {
+            wechselGeld = eingeworfen-ticketpreis;
+            return wechselGeld;
+        }
+    }
+
+    int GesamtEinnahmen(int GesamtEinnahmen)
+    {
+        if (ticketDrucken = true)
+        {
+            GesamtEinnahmen = GesamtEinnahmen + ticketpreis;
+            return GesamtEinnahmen;
+        }
+    }
 }
