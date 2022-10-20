@@ -20,6 +20,7 @@ class TicketautomatDAS : Ticketautomat
         this.ticketpreis = ticketPreis;
         this.eingeworfen = 0;
         this.gesamteinnahmen = 0;
+
     }
     public override string ToString()
     {
@@ -54,6 +55,7 @@ class TicketautomatDAS : Ticketautomat
     {
         if (betragErreicht == true && ticketDrucken == false ) 
         {
+        this.eingeworfen = this.eingeworfen - this.ticketpreis;
         return true;
         }
         return false;
@@ -64,12 +66,25 @@ class TicketautomatDAS : Ticketautomat
     
     int wechselGeldAuszahlen()
     {
-        if (this.eingeworfen > this.ticketpreis)
+        if (ticketDrucken == true)
         {
-            int a = this.eingeworfen - this.ticketpreis;
+            int a = this.eingeworfen;
             return a;
         }
-        return 0; 
+        else if (this.eingeworfen < this.ticketpreis)
+        {
+            int b = this.eingeworfen;
+            return b;
+        }
+         
+    }
+
+    int gesamteinnahmen ()
+    {
+        if (ticketDrucken == true)
+        {
+            gesamteinnahmen += this.ticketpreis;
+        }
     }
 
 
