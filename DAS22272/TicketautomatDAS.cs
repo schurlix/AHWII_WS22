@@ -23,7 +23,16 @@ class TicketautomatDAS : Ticketautomat
     }
     public override string ToString()
     {
-        return $"Ich bin ein Ticketautomat DAS22272, stehe in {this.Standort}, jedes Ticket kostet bei mir {ticketpreis}€.";
+        return $"Das Hier ist der Ticketautomat DAS22272, er steht am {this.Standort}";
+        return $"jedes Ticket kostet beim Ticketautomat DAS22272 nur {ticketPreis}€.";
+        return $"Mit diesem Ticket können Sie in die S-Bahn bei {this.Standort} einsteigen und innerhalb von Wien einmal fahren.";
+        return $"Das Ticktet wird sofortig entwertet und ist nicht mehrmals Gültig";
+        return $"Wenn Sie eine Tageskarte kaufen wollen fahren Sie bitte zum Hauptbahnhof";
+        return $"Wenn Sie eine Wochenkarte kaufen wollen fahren Sie bitte zum Hauptbahnhof";
+        return $"Wenn Sie eine Monatskarte kaufen wollen fahren Sie bitte zum Hauptbahnhof";
+        return $"Wenn Sie eine Jahreskarte kaufen wollen fahren Sie bitte zum Hauptbahnhof";
+        return $"Bitte werfen Sie nun {ticketPreis}€ ein oder verlassen Sie die Station";
+        return $"Wenn der Betrag nicht gezahlt wird muss die Polizei gerufen werden";
 
         if (ticketDrucken == true)
         {
