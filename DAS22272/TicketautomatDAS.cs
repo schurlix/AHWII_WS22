@@ -10,9 +10,10 @@ class TicketautomatDAS : Ticketautomat
     public String Standort { get; set; }
     public int ticketpreis { get; set; }
 
-    public int eingeworfen { get; }
+    public int eingeworfen { get; private set; }
 
     public int gesamteinnahmen { get; }
+    public bool betragErreicht { get; }
     public TicketautomatDAS(String Standort, int ticketPreis)
     {
         this.Standort = Standort;
@@ -23,15 +24,44 @@ class TicketautomatDAS : Ticketautomat
     public override string ToString()
     {
         return $"Ich bin ein Ticketautomat DAS22272, stehe in {this.Standort}, jedes Ticket kostet bei mir {ticketpreis}€.";
+
+        if (ticketDrucken == true)
+        {
+            return $"Ihr Ticket wird Gedruckt";
+        }
     }
 
     public void einwerfen(int betrag)
-    {    }
-    bool ticketDrucken() {
+    {  
+    this.eingeworfen += betrag
+        if (this.eingeworfen >= this.ticketpreis )
+        {
+           betragErreicht = true;
+        }
+            
+    }
+
+    bool ticketDrucken() 
+    {
+        if (betragErreicht == true && ticketDrucken == false ) 
+        {
+        return true;
+        }
         return false;
     }
+
     
-    int wechselGeldAuszahlen() { return 0; }
+   
+    
+    int wechselGeldAuszahlen()
+    {
+        if (this.eingeworfen > this.ticketpreis)
+        {
+            int a = this.eingeworfen - this.ticketpreis;
+            return a;
+        }
+        return 0; 
+    }
 
 
 
