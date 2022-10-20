@@ -9,11 +9,19 @@ class Program
     {
         Ticketautomat[] automaten = {
             new TicketautomatGRAFG("Westbahnhof", 3),
+            new TicketautomatDAS("Matzleinsdorfer Platz", 5)
 
         };
         foreach (var tick in automaten)
         {
-            Console.WriteLine(tick);
+            testedenautmaten(tick);
         }
+
     }
+    static bool testedenautmaten(Ticketautomat tick)
+    {
+        tick.einwerfen(3);
+        return false;
+    }
+
 }
