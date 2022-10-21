@@ -1,4 +1,3 @@
-﻿
 ﻿using System;
 
 namespace automat;
@@ -13,6 +12,7 @@ class Program
             new TicketautomatASC("Hütteldorf", 7),
             new TicketautomatFIE("Spengergasse", 2),
             new TicketautomatHAS("Heiligenstadt", 3),
+            new TicketautomatCHA("Heiligenstadt", 3),
         };
         foreach (var tick in automaten)
         {
@@ -26,5 +26,6 @@ class Program
         Console.WriteLine(tick);
         return false;
     }
+   
 
 }
