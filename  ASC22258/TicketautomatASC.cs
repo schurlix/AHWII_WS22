@@ -4,15 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace automat;
-class TicketautomatHAS : Ticketautomat
+namespace automat;    
+class TicketautomatASC : Ticketautomat
 {
     public String Standort { get; set; }
     public int ticketPreis { get; set; }
     public int eingeworfen { get; }
 
     public int gesamtEinnahmen { get; }
-    public TicketautomatHAS(String Standort, int ticketPreis)
+    public TicketautomatASC(String Standort, int ticketPreis)
     {
         this.Standort = Standort;
         this.ticketPreis = ticketPreis;
@@ -21,13 +21,11 @@ class TicketautomatHAS : Ticketautomat
     }
     public override string ToString()
     {
-        return $"Ich bin ein Ticketautomat HAS, stehe in {this.Standort}, jedes Ticket kostet bei mir {ticketPreis}€.";
+        return $"Ich bin ein Ticketautomat ASC22256, stehe in {this.Standort}, jedes Ticket kostet bei mir {ticketPreis}€.";
     }
-    
+     
     public void einwerfen(int betrag)
-    { 
-
-    }
+    {    }
 
     bool ticketDrucken()
     {
@@ -36,6 +34,4 @@ class TicketautomatHAS : Ticketautomat
     int wechselGeldAuszahlen()
     { return 0; }
 }
-
-//Test
 
