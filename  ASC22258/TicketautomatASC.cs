@@ -5,14 +5,14 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace automat;    
-class TicketautomatGRAFG : Ticketautomat
+class TicketautomatASC : Ticketautomat
 {
     public String Standort { get; set; }
     public int ticketPreis { get; set; }
-    public int eingeworfen { get; private set; }
+    public int eingeworfen { get; }
 
     public int gesamtEinnahmen { get; }
-    public TicketautomatGRAFG(String Standort, int ticketPreis)
+    public TicketautomatASC(String Standort, int ticketPreis)
     {
         this.Standort = Standort;
         this.ticketPreis = ticketPreis;
@@ -21,13 +21,11 @@ class TicketautomatGRAFG : Ticketautomat
     }
     public override string ToString()
     {
-        return $"Ich bin ein Ticketautomat GRAFG, stehe in {this.Standort}, jedes Ticket kostet bei mir {ticketPreis}€.";
+        return $"Ich bin ein Ticketautomat ASC22256, stehe in {this.Standort}, jedes Ticket kostet bei mir {ticketPreis}€.";
     }
      
     public void einwerfen(int betrag)
-    {
-        this.eingeworfen += betrag;
-    }
+    {    }
 
     bool ticketDrucken()
     {
