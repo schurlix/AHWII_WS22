@@ -9,6 +9,9 @@ class TicketautomatHAS : Ticketautomat
 {
     public String Standort { get; set; }
     public int gesamtEinnahmen { get; private set; }
+    public int ticketPreis { get; set; }
+    public int eingeworfen { get; private set; }
+
     public TicketautomatHAS(String Standort, int ticketPreis)
     {
         this.Standort = Standort;
@@ -33,18 +36,18 @@ class TicketautomatHAS : Ticketautomat
 
     bool ticketDrucken()
     {
-        if (this.ticketpreis > this.eingeworfen)
+        if (this.ticketPreis > this.eingeworfen)
         {
-            Console.WriteLine($"Es fehlen noch  {this.ticketpreis - this.eingeworfen} Euro");
+            Console.WriteLine($"Es fehlen noch  {this.ticketPreis - this.eingeworfen} Euro");
             return false;
         }
-        this.eingeworfen -= this.ticketpreis;
-        this.gesamtEinnahmen += this.ticketpreis;
+        this.eingeworfen -= this.ticketPreis;
+        this.gesamtEinnahmen += this.ticketPreis;
         Console.WriteLine("#######################################");
         Console.WriteLine("");
         Console.WriteLine("Fahrschein");
         Console.WriteLine("         Standort: " + this.Standort);
-        Console.WriteLine("         Preis: " + this.ticketpreis);
+        Console.WriteLine("         Preis: " + this.ticketPreis);
         Console.WriteLine("");
         Console.WriteLine("#######################################");
         return true;
