@@ -39,6 +39,15 @@ class TicketautomatDAS : Ticketautomat
         {
             return $"Ihr Ticket wird Gedruckt";
         }
+        if (this.eingeworfen < this.ticketpreis)
+        {
+            return $"Nicht genug Geld";
+            return $"wollen Sie etwa Schwarzfahren?";
+            return $"Sie bekommen Ihr Geld zurück";
+            return $"Sie können es nochmal versuchen";
+
+        }
+
     }
 
     public void einwerfen(int betrag)
