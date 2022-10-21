@@ -24,16 +24,18 @@ class TicketautomatDAS : Ticketautomat
     }
     public override string ToString()
     {
-        return $"Das Hier ist der Ticketautomat DAS22272, er steht am {this.Standort}";
-        return $"jedes Ticket kostet beim Ticketautomat DAS22272 nur {ticketPreis}€.";
-        return $"Mit diesem Ticket können Sie in die S-Bahn bei {this.Standort} einsteigen und innerhalb von Wien einmal fahren.";
-        return $"Das Ticktet wird sofortig entwertet und ist nicht mehrmals Gültig";
-        return $"Wenn Sie eine Tageskarte kaufen wollen fahren Sie bitte zum Hauptbahnhof";
-        return $"Wenn Sie eine Wochenkarte kaufen wollen fahren Sie bitte zum Hauptbahnhof";
-        return $"Wenn Sie eine Monatskarte kaufen wollen fahren Sie bitte zum Hauptbahnhof";
-        return $"Wenn Sie eine Jahreskarte kaufen wollen fahren Sie bitte zum Hauptbahnhof";
-        return $"Bitte werfen Sie nun {ticketPreis}€ ein oder verlassen Sie die Station";
-        return $"Wenn der Betrag nicht gezahlt wird muss die Polizei gerufen werden";
+        string e = $"Das Hier ist der Ticketautomat DAS22272, er steht am {this.Standort}. Jedes Ticket kostet beim Ticketautomat DAS22272 nur {ticketPreis}€. Mit diesem Ticket können Sie in die S-Bahn bei {this.Standort} einsteigen und innerhalb von Wien einmal fahren. Das Ticktet wird sofortig entwertet und ist nicht mehrmals Gültig. Wenn Sie eine Tageskarte kaufen wollen fahren Sie bitte zum Hauptbahnhof. Wenn Sie eine Wochenkarte kaufen wollen fahren Sie bitte zum Hauptbahnhof. Wenn Sie eine Monatskarte kaufen wollen fahren Sie bitte zum Hauptbahnhof. Wenn Sie eine Jahreskarte kaufen wollen fahren Sie bitte zum Hauptbahnhof. Bitte werfen Sie nun {{ticketPreis}}€ ein oder verlassen Sie die Station. Wenn der Betrag nicht gezahlt wird muss die Polizei gerufen werden\";"
+         /*$"Das Hier ist der Ticketautomat DAS22272, er steht am {this.Standort}";
+         $"jedes Ticket kostet beim Ticketautomat DAS22272 nur {ticketPreis}€.";
+         $"Mit diesem Ticket können Sie in die S-Bahn bei {this.Standort} einsteigen und innerhalb von Wien einmal fahren.";
+         $"Das Ticktet wird sofortig entwertet und ist nicht mehrmals Gültig";
+         $"Wenn Sie eine Tageskarte kaufen wollen fahren Sie bitte zum Hauptbahnhof";
+         $"Wenn Sie eine Wochenkarte kaufen wollen fahren Sie bitte zum Hauptbahnhof";
+         $"Wenn Sie eine Monatskarte kaufen wollen fahren Sie bitte zum Hauptbahnhof";
+         $"Wenn Sie eine Jahreskarte kaufen wollen fahren Sie bitte zum Hauptbahnhof";
+         $"Bitte werfen Sie nun {ticketPreis}€ ein oder verlassen Sie die Station";
+         $"Wenn der Betrag nicht gezahlt wird muss die Polizei gerufen werden";*/
+       return e;
 
         if (ticketDrucken == true)
         {
@@ -41,10 +43,11 @@ class TicketautomatDAS : Ticketautomat
         }
         if (this.eingeworfen < this.ticketpreis)
         {
-            return $"Nicht genug Geld";
+            string f = $"Nicht genug Geld. Wollen Sie etwa Schwarzfahren? Sie bekommen Ihr Geld zurück,Sie können es nochmal versuchen"
+            /*return $"Nicht genug Geld";
             return $"wollen Sie etwa Schwarzfahren?";
             return $"Sie bekommen Ihr Geld zurück";
-            return $"Sie können es nochmal versuchen";
+            return $"Sie können es nochmal versuchen";*/
 
         }
 
