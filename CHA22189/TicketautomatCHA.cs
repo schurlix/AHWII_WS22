@@ -9,7 +9,7 @@ namespace automat;
 class TicketautomatCHA : Ticketautomat
 {
     public String standort { get; set; }
-    public int ticketpreis { get; set; }
+    public int ticketPreis { get; set; }
     public int eingeworfen { get; set; }
 
     public int gesamtEinnahmen { get; }
@@ -18,7 +18,7 @@ class TicketautomatCHA : Ticketautomat
     public TicketautomatCHA(String standort, int ticketPreis)
     {
         this.standort = standort;
-        this.ticketpreis = ticketPreis;
+        this.ticketPreis = ticketPreis;
         this.eingeworfen = 0;
         this.gesamtEinnahmen = 0;
 
@@ -26,13 +26,13 @@ class TicketautomatCHA : Ticketautomat
     }
     public override string ToString()
     {
-        return $"Ich bin ein Ticketautomat, stehe in {this.standort}, jedes Ticket kostet bei mir {ticketpreis}€. Bitte werfen sie { ticketpreis} ein, um ein Ticket für {standort} zu kaufen.";
+        return $"Ich bin ein Ticketautomat, stehe in {this.standort}, jedes Ticket kostet bei mir {ticketPreis}€. Bitte werfen sie {ticketPreis} ein, um ein Ticket für {standort} zu kaufen.";
     }
      
     public void einwerfen()
     {
         
-        Console.WriteLine($"Bitte werfen Sie für das Ticket {ticketpreis-eingeworfen} Euro ein." );
+        Console.WriteLine($"Bitte werfen Sie für das Ticket {ticketPreis-eingeworfen} Euro ein." );
 
         int betrag = Convert.ToInt32(Console.ReadLine());
         eingeworfen = eingeworfen + betrag;
@@ -42,9 +42,9 @@ class TicketautomatCHA : Ticketautomat
 
     void ticketDrucken()
     {
-        if (eingeworfen < ticketpreis)
+        if (eingeworfen < ticketPreis)
         {
-            Console.WriteLine($"Du hast {eingeworfen} eingeworfen. Leider ist das zu wenig. Bitte werfe noch folgenden Betrag ein:" + (ticketpreis - eingeworfen));
+            Console.WriteLine($"Du hast {eingeworfen} eingeworfen. Leider ist das zu wenig. Bitte werfe noch folgenden Betrag ein:" + (ticketPreis - eingeworfen));
             einwerfen();
         }
         else
@@ -53,7 +53,7 @@ class TicketautomatCHA : Ticketautomat
             Console.WriteLine("");
             Console.WriteLine("Fahrschein");
             Console.WriteLine("         Standort: " + this.standort);
-            Console.WriteLine("         Preis: " + this.ticketpreis);
+            Console.WriteLine("         Preis: " + this.ticketPreis);
             Console.WriteLine("");
             Console.WriteLine("#######################################");
         }
