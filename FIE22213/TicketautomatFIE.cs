@@ -34,25 +34,33 @@ class TicketautomatFIE : Ticketautomat
     {
         if (eingeworfen >= ticketpreis)
         { 
+                    Console.WriteLine($"################");
+                    Console.WriteLine($"FAHRSCHEINStandort: {Standort}");
+                    Console.WriteLine($"Gute Fahrt!");
+                    Console.WriteLine($"################");
+
             return true;
         }
         else
         {
+            Console.WriteLine($"Zu wenig Geld. Null Punkte")
             return false;
         }
     }
+
     int wechselGeldAuszahlen(int wechselGeld)
     { 
-        if(ticketDrucken = true)
+        if(ticketDrucken() = true)
         {
-            wechselGeld = eingeworfen-ticketpreis;
+            wechselGeld = eingeworfen
+            eingeworfen = 0
             return wechselGeld;
         }
     }
 
     int GesamtEinnahmen(int GesamtEinnahmen)
     {
-        if (ticketDrucken = true)
+        if (ticketDrucken() = true)
         {
             GesamtEinnahmen = GesamtEinnahmen + ticketpreis;
             return GesamtEinnahmen;
