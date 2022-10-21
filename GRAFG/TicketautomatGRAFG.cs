@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace automat;    
+namespace automat;
 class TicketautomatGRAFG : Ticketautomat
 {
     public String Standort { get; set; }
@@ -23,7 +23,7 @@ class TicketautomatGRAFG : Ticketautomat
     {
         return $"Ich bin ein Ticketautomat GRAFG, stehe in {this.Standort}, jedes Ticket kostet bei mir {ticketPreis}€.";
     }
-     
+
     public void einwerfen(int betrag)
     {
         this.eingeworfen += betrag;
@@ -34,6 +34,10 @@ class TicketautomatGRAFG : Ticketautomat
         return false;
     }
     int wechselGeldAuszahlen()
-    { return 0; }
+    {
+        int retoure = eingeworfen;
+        eingeworfen = 0;
+        return retoure;
+    }
 }
 
