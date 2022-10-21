@@ -43,6 +43,7 @@ class TicketautomatDAS : Ticketautomat
         }
         if (this.eingeworfen < this.ticketpreis)
         {
+
             string f = $"Nicht genug Geld. Wollen Sie etwa Schwarzfahren? Sie bekommen Ihr Geld zurück,Sie können es nochmal versuchen"
             return f;
             /*return $"Nicht genug Geld";
@@ -50,6 +51,11 @@ class TicketautomatDAS : Ticketautomat
             return $"Sie bekommen Ihr Geld zurück";
             return $"Sie können es nochmal versuchen";*/
            
+
+            return $"Nicht genug Geld";
+            return $"wollen Sie etwa Schwarzfahren?";
+            return $"Sie bekommen Ihr Geld zurück";
+            return $"Sie können es nochmal versuchen";
 
         }
 
