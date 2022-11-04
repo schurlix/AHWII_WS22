@@ -8,10 +8,10 @@ class Program
         Ticketautomat[] automaten = {
             new TicketautomatGRAFG("Westbahnhof", 3),
             new TicketautomatDAS("Matzleinsdorfer Platz", 5),
-            new TicketautomatASC("Hütteldorf", 7),
+           // new TicketautomatASC("Hütteldorf", 7),
             new TicketautomatFIE("Spengergasse", 2),
             new TicketautomatHAS("Heiligenstadt", 3),
-            new TicketautomatCHA("Heiligenstadt", 3),
+            //new TicketautomatCHA("Heiligenstadt", 3),
         };
         foreach (var tick in automaten)
         {
