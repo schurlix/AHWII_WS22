@@ -12,7 +12,7 @@ class TicketautomatCHA : Ticketautomat
     public int ticketPreis { get; set; }
     public int eingeworfen { get; set; }
 
-    public int gesamtEinnahmen { get; }
+    public int gesamtEinnahmen { get; private set; }
 
 
     public TicketautomatCHA(String standort, int ticketPreis)
@@ -29,33 +29,39 @@ class TicketautomatCHA : Ticketautomat
         return $"Ich bin ein Ticketautomat, stehe in {this.standort}, jedes Ticket kostet bei mir {ticketPreis}€. Bitte werfen sie {ticketPreis} ein, um ein Ticket für {standort} zu kaufen.";
     }
      
-    public void einwerfen()
+    public void einwerfen(int betrag)
     {
         
-        Console.WriteLine($"Bitte werfen Sie für das Ticket {ticketPreis-eingeworfen} Euro ein." );
+        // Console.WriteLine($"Bitte werfen Sie für das Ticket {ticketPreis-eingeworfen} Euro ein." );
 
-        int betrag = Convert.ToInt32(Console.ReadLine());
+        // int betrag = Convert.ToInt32(Console.ReadLine());
         eingeworfen = eingeworfen + betrag;
-        ticketDrucken();
+        // ticketDrucken();
         
     }
 
-    void ticketDrucken()
+    public bool ticketDrucken()
     {
         if (eingeworfen < ticketPreis)
         {
             Console.WriteLine($"Du hast {eingeworfen} eingeworfen. Leider ist das zu wenig. Bitte werfe noch folgenden Betrag ein:" + (ticketPreis - eingeworfen));
-            einwerfen();
+            // einwerfen();
+            return false;
         }
         else
         {
-            Console.WriteLine("#######################################");
+        /*    Console.WriteLine("#######################################");
             Console.WriteLine("");
             Console.WriteLine("Fahrschein");
             Console.WriteLine("         Standort: " + this.standort);
             Console.WriteLine("         Preis: " + this.ticketPreis);
             Console.WriteLine("");
             Console.WriteLine("#######################################");
+        */
+            eingeworfen -= ticketPreis;
+            gesamtEinnahmen += ticketPreis;
+
+            return true;
         }
        
     }

@@ -11,7 +11,7 @@ class Program
             new TicketautomatASC("Hütteldorf", 7),
             new TicketautomatFIE("Spengergasse", 2),
             new TicketautomatHAS("Heiligenstadt", 3),
-            new TicketautomatCHA("Heiligenstadt", 3),
+            new TicketautomatCHA("Pilgramgasse", 3),
         };
         foreach (var tick in automaten)
         {
@@ -22,6 +22,35 @@ class Program
 
             }
         }
+        // Situation: in jedem automaten ist Geld und eingerworfen stimmt 
+        // Test: soviele Tickets drucken wie möglich
+        // nächstes Mal drucken soll Fehler liefern
+        // gesamtEinnahmen sollen stimmen
+        // eingeworfen soll stimmen
+
+        foreach (var tick in automaten)
+        {
+            int druckbar = tick.eingeworfen / tick.ticketPreis;
+            int sollEingeworfen = tick.eingeworfen % tick.ticketPreis;
+            // sollte druckbar mal erfolgreich sein
+            for (int i = 0; i < druckbar; i++)
+            {
+                if (!tick.ticketDrucken()) // das wäre falsch
+                {
+                    Console.WriteLine($"ERROR: {tick.GetType()} druckt nicht genügend tickets");
+                }
+            }
+            // zustand sollte sein: eingeworfen ist weniger als ticketpreis
+            if (tick.ticketDrucken())
+            {
+                Console.WriteLine($"ERROR: {tick.GetType()} druckt tickets obwohl zu wenig Geld da ist");
+            }
+            // zustand: gesamt = druckbar * Ticketpreis
+            // eingeworfen: sollEingeworfen 
+
+
+        }
+
 
     }
     static bool testeEinwerfenWechselgeld(Ticketautomat tick)

@@ -34,7 +34,7 @@ class TicketautomatHAS : Ticketautomat
 
     }
 
-    bool ticketDrucken()
+    public bool ticketDrucken()
     {
         if (this.ticketPreis > this.eingeworfen)
         {
@@ -43,13 +43,13 @@ class TicketautomatHAS : Ticketautomat
         }
         this.eingeworfen -= this.ticketPreis;
         this.gesamtEinnahmen += this.ticketPreis;
-        Console.WriteLine("#######################################");
+     /*   Console.WriteLine("#######################################");
         Console.WriteLine("");
         Console.WriteLine("Fahrschein");
         Console.WriteLine("         Standort: " + this.Standort);
         Console.WriteLine("         Preis: " + this.ticketPreis);
         Console.WriteLine("");
-        Console.WriteLine("#######################################");
+        Console.WriteLine("#######################################");*/
         return true;
 
     }

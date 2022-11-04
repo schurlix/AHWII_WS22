@@ -48,7 +48,7 @@ class TicketautomatDAS : Ticketautomat
             
     }
 
-    bool ticketDrucken() 
+    public bool ticketDrucken() 
     {
         if (betragErreicht == true && ticketDrucken() == false ) 
         {
