@@ -32,7 +32,6 @@ class Program
         {
             int druckbar = tick.eingeworfen / tick.ticketPreis;
             int sollEingeworfen = tick.eingeworfen % tick.ticketPreis;
-
             // TEST: sollte druckbar mal erfolgreich sein
             for (int i = 0; i < druckbar; i++)
             {
@@ -59,7 +58,6 @@ class Program
             {
                 Console.WriteLine($"ERROR: {tick.GetType()} Eingeworfen. Soll: {sollEingeworfen}, Ist: {tick.eingeworfen}");
             }
-
 
         }
 
