@@ -43,16 +43,16 @@ class TicketautomatDAS : Ticketautomat
     public void einwerfen(int betrag)
     {
         this.eingeworfen += betrag;
-        if (this.eingeworfen >= this.ticketPreis )
+      /*  if (this.eingeworfen >= this.ticketPreis )
         {
            betragErreicht = true;
         }
-            
+            */
     }
 
     public bool ticketDrucken() 
     {
-        if (betragErreicht == true && ticketDrucken() == false ) 
+        if (eingeworfen >= ticketPreis) 
         {
             this.eingeworfen = this.eingeworfen - this.ticketPreis;
             // Console.WriteLine($"Ticket vom {this.Standort}");
