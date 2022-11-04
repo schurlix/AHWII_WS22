@@ -11,7 +11,7 @@ class TicketautomatGRAFG : Ticketautomat
     public int ticketPreis { get; set; }
     public int eingeworfen { get; private set; }
 
-    public int gesamtEinnahmen { get; }
+    public int gesamtEinnahmen { get; private set; }
     public TicketautomatGRAFG(String Standort, int ticketPreis)
     {
         this.Standort = Standort;
@@ -29,9 +29,18 @@ class TicketautomatGRAFG : Ticketautomat
         this.eingeworfen += betrag;
     }
 
-    bool ticketDrucken()
+    public bool ticketDrucken()
     {
-        return false;
+        if (this.eingeworfen < this.ticketPreis)
+        {
+            return false;
+        }
+        else
+        {
+            this.eingeworfen -= this.ticketPreis;
+            this.gesamtEinnahmen += this.ticketPreis;
+            return true;            
+        }
     }
     int wechselGeldAuszahlen()
     {

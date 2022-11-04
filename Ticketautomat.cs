@@ -8,15 +8,14 @@ namespace automat;
 public interface Ticketautomat
 {
     //public String? standort;
-    public int ticketPreis { set; get; }
-    public int eingeworfen { get; }
-    public int gesamtEinnahmen { get; }
+    int ticketPreis { get; set; }
+    int eingeworfen { get; }
+     int gesamtEinnahmen { get; }
 
-    public void einwerfen(int a) { }
+    void einwerfen(int a);
 
-    public bool ticketDrucken() {
-        return false;
-    }
+
+     bool ticketDrucken();
     public int wechselGeldAuszahlen() {
         return 0;
     }

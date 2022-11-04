@@ -36,10 +36,10 @@ class TicketautomatFIE : Ticketautomat
         {
             gesamtEinnahmen += ticketPreis;
             eingeworfen -= ticketPreis;
-                    Console.WriteLine($"################");
-                    Console.WriteLine($"FAHRSCHEINStandort: {Standort}");
-                    Console.WriteLine($"Gute Fahrt!");
-                    Console.WriteLine($"################");
+           //         Console.WriteLine($"################");
+            //        Console.WriteLine($"FAHRSCHEINStandort: {Standort}");
+              //      Console.WriteLine($"Gute Fahrt!");
+                //    Console.WriteLine($"################");
 
             return true;
         }

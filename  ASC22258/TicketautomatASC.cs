@@ -9,7 +9,7 @@ class TicketautomatASC : Ticketautomat
 {
     public String Standort { get; set; }
     public int ticketPreis { get; set; }
-    public int eingeworfen { get; }
+    public int eingeworfen { get; private set; }
 
     public int gesamtEinnahmen { get; }
     public TicketautomatASC(String Standort, int ticketPreis)
@@ -25,9 +25,12 @@ class TicketautomatASC : Ticketautomat
     }
      
     public void einwerfen(int betrag)
-    {    }
+    {
+        eingeworfen += betrag;
 
-    bool ticketDrucken()
+    }
+
+    public bool ticketDrucken()
     {
         return false;
     }

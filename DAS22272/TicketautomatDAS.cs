@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -39,7 +39,7 @@ class TicketautomatDAS : Ticketautomat
 
     }
 
-    bool ticketDrucken()
+    public bool ticketDrucken() 
     {
 
         if (this.eingeworfen > this.ticketPreis)
