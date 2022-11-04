@@ -13,7 +13,9 @@ class TicketautomatDAS : Ticketautomat
     public int eingeworfen { get; private set; }
 
     public int gesamtEinnahmen { get; }
-    public bool betragErreicht { get; private set; }
+    //DAS_is_the_best
+
+
     public TicketautomatDAS(String Standort, int ticketPreis)
     {
         this.Standort = Standort;
@@ -52,8 +54,9 @@ class TicketautomatDAS : Ticketautomat
     {
         if (betragErreicht == true && ticketDrucken() == false ) 
         {
-        this.eingeworfen = this.eingeworfen - this.ticketPreis;
-        return true;
+            this.eingeworfen = this.eingeworfen - this.ticketPreis;
+            // Console.WriteLine($"Ticket vom {this.Standort}");
+            return true;
         }
         return false;
     }
