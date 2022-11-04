@@ -1,4 +1,3 @@
-﻿using System;
 
 namespace automat;
 
@@ -16,16 +15,36 @@ class Program
         };
         foreach (var tick in automaten)
         {
-            testedenautmaten(tick);
+            // Teste einwerfen und Wechselgeld
+            if (!testeEinwerfenWechselgeld(tick))
+            {
+                Console.WriteLine($"ERROR: {tick.GetType()} macht Fehler beim Einwerfen oder Wechselgeld.");
+
+            }
         }
 
     }
-    static bool testedenautmaten(Ticketautomat tick)
+    static bool testeEinwerfenWechselgeld(Ticketautomat tick)
     {
-        tick.einwerfen(3);
-        Console.WriteLine(tick);
-        return false;
+        var gen = new Random();
+        int jetzt, gesamt = 0;
+        int wieoft = gen.Next(2, 12);
+        for (int i = 0; i < wieoft; i++)
+        {
+            jetzt = gen.Next(10);
+            gesamt += jetzt;
+            tick.einwerfen(jetzt);
+        }
+        // Console.WriteLine($"gesamt: {gesamt}, tick: {tick.eingeworfen}");
+        if (tick.eingeworfen == gesamt)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
-   
+
 
 }

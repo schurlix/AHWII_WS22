@@ -10,8 +10,8 @@ class TicketautomatFIE : Ticketautomat
     public String Standort { get; set; }
     public int ticketPreis { get; set; }
     public int eingeworfen { get; private set; }
+    public int gesamtEinnahmen { get; private set; }
 
-    public int gesamtEinnahmen { get; }
     public TicketautomatFIE(String Standort, int ticketPreis)
     {
         this.Standort = Standort;
@@ -29,11 +29,32 @@ class TicketautomatFIE : Ticketautomat
         this.eingeworfen += betrag;
     }
    
-    // Hello World
-    bool ticketDrucken()
+    
+    public bool ticketDrucken()
     {
-        return false;
+        if (eingeworfen >= ticketPreis)
+        {
+            gesamtEinnahmen += ticketPreis;
+            eingeworfen -= ticketPreis;
+                    Console.WriteLine($"################");
+                    Console.WriteLine($"FAHRSCHEINStandort: {Standort}");
+                    Console.WriteLine($"Gute Fahrt!");
+                    Console.WriteLine($"################");
+
+            return true;
+        }
+        else
+        {
+            Console.WriteLine($"Zu wenig Geld. Null Punkte");
+            return false;
+        }
     }
-    int wechselGeldAuszahlen()
-    { return 0; }
-}
+
+    public int wechselGeldAuszahlen()
+    {
+        int reture = eingeworfen;
+        eingeworfen = 0;
+        return reture;
+    }
+
+ }
