@@ -32,7 +32,7 @@ class Program
         {
             int druckbar = tick.eingeworfen / tick.ticketPreis;
             int sollEingeworfen = tick.eingeworfen % tick.ticketPreis;
-            // sollte druckbar mal erfolgreich sein
+            // TEST: sollte druckbar mal erfolgreich sein
             for (int i = 0; i < druckbar; i++)
             {
                 if (!tick.ticketDrucken()) // das wäre falsch
@@ -40,14 +40,24 @@ class Program
                     Console.WriteLine($"ERROR: {tick.GetType()} druckt nicht genügend tickets");
                 }
             }
+
             // zustand sollte sein: eingeworfen ist weniger als ticketpreis
             if (tick.ticketDrucken())
             {
                 Console.WriteLine($"ERROR: {tick.GetType()} druckt tickets obwohl zu wenig Geld da ist");
             }
-            // zustand: gesamt = druckbar * Ticketpreis
-            // eingeworfen: sollEingeworfen 
 
+            // zustand: gesamt = druckbar * Ticketpreis
+            if (!(tick.gesamtEinnahmen == druckbar * tick.ticketPreis))
+            {
+                Console.WriteLine($"ERROR: {tick.GetType()} Gesamt. Soll: {druckbar*tick.ticketPreis}, Ist: {tick.gesamtEinnahmen}");
+            }
+
+            // eingeworfen: sollEingeworfen 
+            if (!(tick.eingeworfen == sollEingeworfen))
+            {
+                Console.WriteLine($"ERROR: {tick.GetType()} Eingeworfen. Soll: {sollEingeworfen}, Ist: {tick.eingeworfen}");
+            }
 
         }
 

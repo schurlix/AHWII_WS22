@@ -13,8 +13,7 @@ class TicketautomatDAS : Ticketautomat
     public int eingeworfen { get; private set; }
 
     public int gesamtEinnahmen { get; }
-    DAS_is_the_best
-
+    //DAS_is_the_best
 
     public TicketautomatDAS(String Standort, int ticketPreis)
     {
@@ -36,16 +35,14 @@ class TicketautomatDAS : Ticketautomat
     public void einwerfen(int betrag)
     {
         this.eingeworfen += betrag;
-
     }
 
     public bool ticketDrucken() 
     {
-
-        if (this.eingeworfen > this.ticketPreis)
+        if (eingeworfen >= ticketPreis) 
         {
             this.eingeworfen = this.eingeworfen - this.ticketPreis;
-            Console.WriteLine($"Ticket vom {this.Standort}");
+            // Console.WriteLine($"Ticket vom {this.Standort}");
             return true;
         }
         else
